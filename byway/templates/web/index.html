@@ -1,0 +1,335 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+{% include 'includes/header.html' %} 
+
+
+<!-- spotlight section starting --> 
+<section id="spotlight">
+    <div class="wrapper">
+        <div class="spotlightContent">
+            <h3 class="spotlightHeading">
+                Unlock Your Potential with Byway
+            </h3>
+            <p class="spotlightDescription">
+                Welcome to Byway, where learning knows no bounds. We
+                believe that education is the key to personal and
+                professional growth, and we're here to guide you on your
+                journey to success.
+            </p>
+            {% if user.is_authenticated %}
+    
+                {% if user.profile.is_instructor %}
+            
+
+                <form onsubmit="return confirm('Are you sure you want to leave your instructor role?');" method="POST" action="{% url 'users:leave_instructor_role' %}">
+                    {% csrf_token %}
+                    <button type="submit" class="spotlightButton-danger">
+                        Revert to Learner Role
+                    </button>
+                </form>
+        
+                {% else %}
+    
+            <form onsubmit="return confirm('Are you sure you want to Enter instructor role?');" method="POST" action="{% url 'users:become_instructor' %}">
+                {% csrf_token %}
+                <button type="submit" class="spotlightButton">
+                    Start your instructor journey
+                </button>
+            </form>
+        
+                {% endif %}
+    
+            {% endif %}
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <li class="{{ message.tags }}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+                
+        </div>
+    </div>
+</section>
+<!-- spotlight section ending --> 
+
+<!-- course detaisl starting -->    
+<section id="courseDetails">
+    <div class="wrapper">
+        <ul>
+            <li>
+                <h3>250+</h3>
+                <p>Courses by our best mentors</p>
+            </li>
+            <li>
+                <h3>1000+</h3
+                <p>Courses by our best mentors</p>
+            </li>
+            <li>
+                <h3>15+</h3>
+                <p>Courses by our best mentors</p>
+            </li>
+            <li>
+                <h3>2400+</h3>
+                <p>Courses by our best mentors</p>
+            </li>
+        </ul>
+    </div>
+</section>
+<!-- course detaisl ending --> 
+
+<!-- course categories starting -->
+<section id="courseCategories">
+    <div class="wrapper">
+        <div class="categorieTop">
+            <h3>Top Categories</h3>
+            <a href="{% url 'web:categories' %}" class="seeAll">See All</a>
+        </div>
+        <div class="categorieBottom">
+            <ul>
+                {% for category in categories %}
+                <li>
+                    <a href="{% url 'web:categoriescourses' category.id %}">
+                        <div class="ImageDiv">
+                            <img src="{{category.caategory_img.url}}" alt="" />
+                        </div>
+                        <h3>{{category.name}}</h3>
+                        <p>{{category.course_count}}</p>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- course categories ending -->
+
+<!-- top products starting -->
+<section id="TopProductsContainer">
+    <div class="wrapper">
+        <div class="categorieTop">
+            <h3>Top Courses</h3>
+            <a href="{% url 'web:cources' %}" class="seeAll">See All</a>
+        </div>
+        <div class="productBottom">
+            <ul>
+                {% for cource in cources%}
+                <li>
+                    <a href="{% url 'web:courcesingle' cource.id %}">
+                        <div class="productImage">
+                            <img
+                                src="{{cource.course_image.url}}"
+                                alt=""
+                            />
+                        </div>
+                        <h3 class="productName">
+                            {{cource.title}}
+                        </h3>
+                        <p class="productCategory">
+                            {{cource.instructor.username}}
+                        </p>
+                        <div class="productRating">
+                            <div class="productImgSection">
+                                <img src="{% static 'icons/star.svg' %}" alt="" />
+                                <img src="{% static 'icons/star.svg' %}" alt="" />
+                                <img src="{% static 'icons/star.svg' %}" alt="" />
+                                <img src="{% static 'icons/star.svg' %}" alt="" />
+                                <img src="{% static 'icons/star.svg' %}" alt="" />
+                            </div>
+                            <p class="ratingCount">(1200 ratings)</p>
+                        </div>
+                        <div class="producttime">
+                            <span>{{cource.total_time}}</span>
+                            <span>{{cource.total_lecture}} lecture</span>
+                            <span>{{cource.difficulty}}</span>
+                        </div>
+                        <h3 class="productPrice">${{cource.price}}</h3>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- top products ending -->
+
+<!-- top seller container start -->
+<section id="topSellerContainer">
+    <div class="wrapper">
+        <div class="categorieTop">
+            <h3>Top Instructor</h3>
+            <a href="{% url 'web:instructors' %}" class="seeAll">See All</a>
+        </div>
+        <div class="topSellerBottom">
+            <ul>
+                
+                {% for teacher in instructor %}
+                <li>
+                    <a href="">
+                        <img
+                            src="{{teacher.profile_picture.url}}"
+                            alt="{{teacher.user.username}}"
+                            class="seller"
+                        />
+                        <h3 class="sellerName">{{teacher.user.username}}</h3>
+                        {% comment %} <p class="sellerCategory">UI/UX Designer</p> {% endcomment %}
+                        <div class="sellerDetails">
+                            <span class="sellerRating">
+                                <img
+                                    src="{% static 'icons/star.svg' %}"
+                                    alt=""
+                                    class="star"
+                                />
+                                4.3
+                            </span>
+                            <p class="sellerCustomers">2400 Students</p>
+                        </div>
+                    </a>
+                </li>
+                {% endfor %}
+               
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- top seller container end -->
+
+<!-- custemor section starting -->
+<section id="CustomerFeedbackSection">
+    <div class="wrapper">
+        <div class="CustomerTop">
+            <ul>
+                <li><h3>What Our Customer Say About Us</h3></li>
+                <li>
+                    <div class="buttonGruop">
+                        <button id="scroll-left" class="Left">
+                            <img src="{% static 'icons/left.svg' %}" alt="" />
+                        </button>
+                        <button id="scroll-right" class="Right">
+                            <img src="{% static 'icons/right.svg' %}" alt="" />
+                        </button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="CustomerBottom">
+            <ul id="review-list">
+                {% for review in platform_reviews %}
+                    <li>
+                        <img
+                            src="{% static 'icons/double_quots.svg' %}"
+                            alt=""
+                            class="quote"
+                        />
+                        <p class="customerQuote">
+                            "{{ review.review_text }}"
+                        </p>
+                        <div class="customerQuoteBottom">
+                            <img
+                                src="{{ review.student.profile.profile_picture.url }}"
+                                alt=""
+                                class="customer"
+                            />
+                            <div class="customerQuoteBottomRight">
+                                <h3 class="reviwername">{{ review.student.username }}</h3>
+                                <p class="type">{{ review.student.profile.title|default:"Learner" }}</p>
+                            </div>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- custemor section ending -->
+
+<!-- seller section starting -->
+<section id="sellerSection">
+    <div class="wrapper">
+        <div class="sellerDiv">
+            <div class="sellerContainer">
+                <div class="sellerLeft">
+                    <img
+                        src="{% static 'images/model-4.jpg' %}"
+                        alt=""
+                        class="seller"
+                    />
+                </div>
+                <div class="sellerRight">
+                    <h3 class="title">Become an Instructor</h3>
+                    <p class="sellerDesc">
+                        Instructors from around the world teach millions
+                        of students on Byway. We provide the tools and
+                        skills to teach what you love.
+                    </p>
+                    {% if user.is_authenticated %}
+    
+                        {% if user.profile.is_instructor %}
+            
+                            <form onsubmit="return confirm('Are you sure you want to leave your instructor role?');"  method="POST" action="{% url 'users:leave_instructor_role' %}">
+                                {% csrf_token %}
+                                <button type="submit" class="sellerJourny">
+                                    Revert to Learner Role
+                                </button>
+                            </form>
+        
+                        {% else %}
+    
+                            <form onsubmit="return confirm('Are you sure you want to Enter instructor role?');" method="POST" action="{% url 'users:become_instructor' %}">
+                                {% csrf_token %}
+                                <button type="submit" class="sellerJourny">
+                                    Start your instructor journey
+                                </button>
+                            </form>
+        
+                        {% endif %}
+    
+                    {% endif %}
+                    {% if messages %}
+                        <ul class="messages">
+                            {% for message in messages %}
+                                <li class="{{ message.tags }}">{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                    
+                </div>
+            </div>
+            <div class="sellerContainer">
+                <div class="sellerLeft">
+                    <img
+                        src="{% static 'images/model-6.png' %}"
+                        alt=""
+                        class="seller"
+                    />
+                </div>
+                <div class="sellerRight">
+                    <h3 class="title">
+                        Transform your life through education
+                    </h3>
+                    <p class="sellerDesc">
+                        Learners around the world are launching new
+                        careers, advancing in their fields, and
+                        enriching their lives.
+                    </p>
+                    <form action="{% url 'web:cources' %}"" method="POST">
+                        {% csrf_token %}
+                        <button class="sellerJourny">
+                        Checkout Courses
+                        <img src="{% static 'icons/right_arrow.svg' %}" alt="" />
+                    </button>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- seller section ending -->
+
+
+{% include 'includes/footer.html' %}
+
+{% endblock %}

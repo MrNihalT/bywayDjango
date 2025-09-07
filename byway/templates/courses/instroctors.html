@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+{% include 'includes/header.html' %} 
+
+<section id="topSellerContainer">
+    <div class="wrapper">
+        <div class="categorieTop">
+            <h3>Top Instructor</h3>
+            <a href="" class="seeAll">See All</a>
+        </div>
+        <div class="topSellerBottom">
+            <ul>
+                
+                {% for teacher in instructors %}
+                <li>
+                    <a href="">
+                        <img
+                            src="{{teacher.profile_picture.url}}"
+                            alt="{{teacher.user.username}}"
+                            class="seller"
+                        />
+                        <h3 class="sellerName">{{teacher.user.username}}</h3>
+                        {% comment %} <p class="sellerCategory">UI/UX Designer</p> {% endcomment %}
+                        <div class="sellerDetails">
+                            <span class="sellerRating">
+                                <img
+                                    src="{% static 'icons/star.svg' %}"
+                                    alt=""
+                                    class="star"
+                                />
+                                4.3
+                            </span>
+                            <p class="sellerCustomers">2400 Students</p>
+                        </div>
+                    </a>
+                </li>
+                {% endfor %}
+               
+            </ul>
+        </div>
+    </div>
+</section>
+
+{% include 'includes/footer.html' %}
+{% endblock %}

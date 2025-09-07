@@ -1,0 +1,2163 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    background: transparent;
+    font-weight: normal;
+    text-decoration: none;
+    outline: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #000;
+}
+html{
+    scroll-behavior: smooth;
+}
+ol,
+ul {
+    list-style: none;
+}
+del {
+    text-decoration: line-through;
+}
+body {
+    overflow-x: hidden;
+    min-width: 320px;
+    /* font-weight: 500; */
+    font-family: "Inter", sans-serif;
+}
+.wrapper {
+    width: 90%;
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    height: 65px;
+    background: #ffffff;
+    align-items: center;
+    width: 100%;
+    border: 1px solid #e2e8f0;
+}
+.wrapper {
+}
+nav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+nav .navleft {
+}
+nav .navleft a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+nav .navleft a .Logoh3 {
+    width: 31px;
+    height: 40px;
+}
+nav .navleft a h3 img {
+    width: 100%;
+    display: block;
+}
+nav .navleft a h3 .logoName {
+    font-weight: 500;
+    font-size: 16px;
+    color: #334155;
+}
+nav .navRight {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    align-items: center;
+}
+nav .navRight .icons {
+    height: 24px;
+    width: 24px;
+}
+nav .navRight .username {
+}
+nav .navRight .username h3 {
+    background: #334155;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    font-weigh: 500;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+nav .navRight .logoutBtn,
+.loginBtn {
+    width: 61px;
+    height: 40px;
+    border: 1px solid #334155;
+    font-weight: 500;
+    font-size: 14px;
+    color: #334155;
+    text-align: center;
+    align-content: center;
+    border-radius: 8px;
+}
+
+nav .navRight .signupBtn {
+    width: 73px;
+    height: 40px;
+    background: #334155;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    align-content: center;
+    text-align: center;
+    display: block;
+    border-radius: 8px;
+  
+}
+nav .navRightMobileContainer {
+    display: none;
+}
+nav .navRightMobileContainer .ButtonMenu {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+nav .navRightMobileContainer .ButtonMenu img {
+    width: 20px;
+    height: 20px;
+}
+
+.MobileMenuItems {
+    position: fixed;
+    background: #8dd8fbff;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 100%;
+
+    padding: 80px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+    color: #ffffff;
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in-out;
+    border: 2px solid #acd8ecff;
+}
+.MobileMenuItems.active {
+    position: fixed;
+    background: #8dd8fbff;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 100%;
+    padding: 80px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+    color: #ffffff;
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(0);
+    transition: transform 0.5s ease-in-out;
+    border: 2px solid #acd8ecff;
+}
+
+nav .navRightMobileContainer .MobileMenuItems .icons {
+}
+nav .navRightMobileContainer .MobileMenuItems .icons img {
+}
+nav .navRightMobileContainer .MobileMenuItems .username {
+}
+nav .navRightMobileContainer .MobileMenuItems .username h3 {
+}
+nav .navRightMobileContainer .MobileMenuItems .logoutBtn {
+}
+nav .navRightMobileContainer .MobileMenuItems .loginBtn {
+}
+nav .navRightMobileContainer .MobileMenuItems .signupBtn {
+}
+
+/* Heading stoped  */
+
+/* Spotlight Starting */
+
+#spotlight {
+    height: 600px;
+    display: flex;
+    align-items: center;
+    background-image: url("../images/image\ 18.png");
+    background-repeat: no-repeat;
+
+    background-size: 520px;
+    background-position: right 10% center;
+}
+#spotlight .spotlightContent {
+    display: flex;
+    flex-direction: column;
+}
+#spotlight .spotlightContent .spotlightHeading {
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 40px;
+    max-width: 450px;
+    line-height: 120%;
+    letter-spacing: 0%;
+    color: #0f172a;
+    margin-bottom: 20px;
+}
+#spotlight .spotlightContent .spotlightDescription {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+    letter-spacing: 0%;
+    color: #334155;
+    max-width: 550px;
+    margin-bottom: 20px;
+}
+#spotlight .spotlightContent .spotlightButton {
+    padding: 15px 20px;
+    background: #3b82f6;
+    max-width: 240px;
+    text-align: center;
+    border-radius: 8px;
+    color: #ffffff;
+    font-weight: 500;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+}
+#spotlight .spotlightContent .spotlightButton-danger {
+    padding: 15px 20px;
+    background: red;
+    max-width: 240px;
+    text-align: center;
+    border-radius: 8px;
+    color: #ffffff;
+    font-weight: 500;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+}
+
+/* Spotlight Ending */
+
+/* CousreDetails Starting */
+
+#courseDetails {
+    background: #f8fafc;
+    height: 149px;
+    width: 100%;
+    align-content: center;
+    margin-bottom: 70px;
+}
+#courseDetails ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#courseDetails ul li {
+    padding-right: 80px;
+    border-right: 4px solid #e2e8f0;
+}
+#courseDetails ul li:last-child {
+    border: 0;
+    padding-right: 0;
+}
+#courseDetails ul li h3 {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 130%;
+    color: #0f172a;
+}
+#courseDetails ul li p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%;
+    color: #0f172a;
+}
+
+/* CousreDetails Ending */
+
+/* CourseCategories starting */
+
+#courseCategories {
+    margin: 0 0 60px 0;
+}
+.categorieTop {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.categorieTop h3 {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 140%;
+    color: #0f172a;
+}
+.categorieTop .seeAll {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 160%;
+    color: #3b82f6;
+    cursor: pointer;
+}
+#courseCategories .categorieBottom {
+    transition: all 1s ease-in-out;
+}
+#courseCategories .categorieBottom ul {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 30px;
+    transition: all 1s ease-in-out;
+}
+#courseCategories .categorieBottom ul li {
+    width: 23%;
+    max-width: 350px;
+    height: 224px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0px 0px 8px 0px #3b82f61f;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: white;
+
+    animation-delay: 0.5s;
+}
+#courseCategories .categorieBottom ul li .ImageDiv {
+    width: 100px;
+    height: 100px;
+    background: #e0f2fe;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+#courseCategories .categorieBottom ul li .ImageDiv img {
+    width: 60%;
+    height: auto;
+    opacity: 1;
+}
+#courseCategories .categorieBottom ul li h3 {
+    margin-bottom: 5px;
+    font-weight: 600;
+    font-size: 20px;
+    leading-trim: NONE;
+    line-height: 150%;
+    letter-spacing: 0%;
+    color: #0f172a;
+    text-align: center;
+}
+#courseCategories .categorieBottom ul li p {
+    font-weight: 400;
+    font-size: 16px;
+    leading-trim: NONE;
+    line-height: 160%;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #334155;
+}
+
+/* CourseCategories ending */
+
+/* productsectionStarting */
+
+#TopProductsContainer {
+    padding: 80px 0;
+}
+#TopProductsContainer div.productBottom {
+}
+#TopProductsContainer div.productBottom ul {
+    display: flex;
+    justify-content: flex-start;
+    row-gap: 30px;
+    column-gap: 2%;
+    flex-wrap: wrap;
+    transition: all 1s ease-in-out;
+
+    animation-delay: 0.5s;
+}
+#TopProductsContainer div.productBottom ul li {
+    max-width: 350px;
+    width: 23%;
+    gap: 8px;
+    border-radius: 16px;
+    border-width: 1px;
+    padding: 18px 25px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0px 0px 8px 0px #3b82f61f;
+    display: flex;
+    flex-direction: column;
+}
+#TopProductsContainer div.productBottom ul li a {
+    width: 100%;
+    height: 100%;
+}
+#TopProductsContainer div.productBottom ul li a div.productImage {
+    display: flex;
+    justify-content: center;
+}
+#TopProductsContainer div.productBottom ul li a div.productImage img {
+    width: 100%;
+    max-width: 266px;
+    opacity: 1;
+    border-radius: 8px;
+    height: 139px;
+
+    opacity: 1;
+    border-radius: 8px;
+
+    opacity: 1;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+#TopProductsContainer div.productBottom ul li a h3.productName {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 160%;
+    letter-spacing: 0%;
+    margin-bottom: 2px;
+    color: #0f172a;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#TopProductsContainer div.productBottom ul li a p.productCategory {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    margin-bottom: 3px;
+    color: #334155;
+}
+#TopProductsContainer div.productBottom ul li a div.productRating {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+#TopProductsContainer
+    div.productBottom
+    ul
+    li
+    a
+    div.productRating
+    div.productImageSection {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+#TopProductsContainer
+    div.productBottom
+    ul
+    li
+    a
+    div.productRating
+    div.productImageSection
+    img {
+    width: 20px;
+    height: 20px;
+}
+#TopProductsContainer
+    div.productBottom
+    ul
+    li
+    a
+    div.productRating
+    p.ratingCount {
+    margin-left: 10px;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #334155;
+}
+#TopProductsContainer div.productBottom ul li a div.producttime {
+    margin-bottom: 5px;
+}
+#TopProductsContainer div.productBottom ul li a div.producttime span {
+    font-weight: 400;
+    font-size: 14px;
+    leading-trim: NONE;
+    line-height: 150%;
+    letter-spacing: 0%;
+    color: #334155;
+}
+#TopProductsContainer div.productBottom ul li a h3.productPrice {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    color: #0f172a;
+}
+
+/* productsectionending */
+
+/* seller starting */
+
+#topSellerContainer {
+    /* margin-top: 50px; */
+    margin-bottom: 50px;
+}
+#topSellerContainer div.topSellerBottom {
+}
+#topSellerContainer div.topSellerBottom ul {
+    display: flex;
+    row-gap: 30px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    column-gap: 40px;
+    flex-wrap: wrap;
+    transition: all 1s ease-in-out;
+
+    animation-delay: 0.5s;
+}
+#topSellerContainer div.topSellerBottom ul li {
+    max-width: 212px;
+    width: 16%;
+    height: 281px;
+    opacity: 1;
+    gap: 16px;
+    border-radius: 16px;
+    border-width: 1px;
+    box-shadow: 0px 0px 8px 0px #3b82f61f;
+    border: 1px solid #e2e8f0;
+    padding: 16px;
+    text-align: center;
+    transition: all 1s ease-in-out;
+
+    animation-delay: 0.5s;
+}
+#topSellerContainer div.topSellerBottom ul li a {
+}
+#topSellerContainer div.topSellerBottom ul li a img.seller {
+    width: 100%;
+
+    height: 132px;
+    overflow: hidden;
+    opacity: 1;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+#topSellerContainer div.topSellerBottom ul li a h3.sellerName {
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 160%;
+    letter-spacing: 0%;
+    color: #0f172a;
+}
+#topSellerContainer div.topSellerBottom ul li a p.sellerCategory {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: #334155;
+    letter-spacing: 0%;
+    margin-bottom: 10px;
+}
+#topSellerContainer div.topSellerBottom ul li a div.sellerDetails {
+    display: flex;
+    border-top: 1px solid #e2e8f0;
+    padding: 15px 0 0 0;
+    align-items: center;
+    justify-content: space-between;
+}
+#topSellerContainer
+    div.topSellerBottom
+    ul
+    li
+    a
+    div.sellerDetails
+    span.sellerRating {
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 14px;
+    leading-trim: NONE;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+#topSellerContainer
+    div.topSellerBottom
+    ul
+    li
+    a
+    div.sellerDetails
+    span.sellerRating
+    img {
+    width: 20px;
+    height: 20px;
+}
+#topSellerContainer
+    div.topSellerBottom
+    ul
+    li
+    a
+    div.sellerDetails
+    p.sellerCustomers {
+    font-family: Inter;
+    font-weight: 600;
+    font-style: Semi Bold;
+    font-size: 12px;
+    leading-trim: NONE;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #334155;
+}
+
+/* seller ending */
+
+/* customer starting */
+
+#CustomerFeedbackSection {
+    background: #f8fafc;
+    height: auto;
+    padding: 80px 0;
+}
+#CustomerFeedbackSection .CustomerTop {
+    margin-bottom: 30px;
+}
+#CustomerFeedbackSection .CustomerTop ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#CustomerFeedbackSection .CustomerTop ul li {
+}
+#CustomerFeedbackSection .CustomerTop ul li h3 {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 140%;
+    max-width: 300px;
+}
+#CustomerFeedbackSection .CustomerTop ul li div.buttonGruop {
+    display: flex;
+    gap: 24px;
+    margin-top: 16px;
+    justify-content: flex-end;
+}
+#CustomerFeedbackSection .CustomerTop ul li .buttonGruop button.Left {
+    width: 56px;
+    height: 40px;
+    border-radius: 8px;
+    border: none;
+    background: #94a3b8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#CustomerFeedbackSection .CustomerTop ul li .buttonGruop button.Left:hover {
+    cursor: pointer;
+}
+#CustomerFeedbackSection .CustomerTop ul li .buttonGruop button.Left img {
+    width: 6px;
+    height: 12px;
+}
+#CustomerFeedbackSection .CustomerTop ul li .buttonGruop button.Right {
+    width: 56px;
+    height: 40px;
+    border-radius: 8px;
+    border: none;
+    background: #94a3b8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#CustomerFeedbackSection .CustomerTop ul li .buttonGruop button.Right:hover {
+    cursor: pointer;
+}
+#CustomerFeedbackSection .CustomerTop ul li .buttonGruop button.Right img {
+    width: 6px;
+    height: 12px;
+}
+#CustomerFeedbackSection .CustomerBottom {
+    overflow: hidden;
+    height: auto;
+}
+#CustomerFeedbackSection .CustomerBottom ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    overflow: auto;
+    scroll-behavior: smooth;
+    list-style: none;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    
+    
+}
+.CustomerBottom ul::-webkit-scrollbar { /* For Chrome, Safari, and Opera */
+    display: none;
+}
+#CustomerFeedbackSection .CustomerBottom ul li {
+    flex-shrink: 0;
+    width: 24%;
+    min-width: 330px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: auto;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    padding: 24px;
+    background: #ffffff;
+    box-shadow: 0px 0px 8px 0px #3b82f61f;
+}
+#CustomerFeedbackSection .CustomerBottom ul li img.quote {
+    width: 35px;
+    height: 27px;
+    margin-bottom: 12px;
+}
+#CustomerFeedbackSection .CustomerBottom ul li p.customerQuote {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+    color: #000000;
+    letter-spacing: 0%;
+    margin-bottom: 8px;
+}
+#CustomerFeedbackSection .CustomerBottom ul li div.customerQuoteBottom {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+#CustomerFeedbackSection
+    .CustomerBottom
+    ul
+    li
+    div.customerQuoteBottom
+    img.customer {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+#CustomerFeedbackSection
+    .CustomerBottom
+    ul
+    li
+    div.customerQuoteBottom
+    div.customerQuoteBottomRight {
+    display: flex;
+    flex-direction: column;
+}
+#CustomerFeedbackSection
+    .CustomerBottom
+    ul
+    li
+    div.customerQuoteBottom
+    div.customerQuoteBottomRight
+    h3.reviwername {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 160%;
+    color: #000000;
+}
+#CustomerFeedbackSection
+    .CustomerBottom
+    ul
+    li
+    div.customerQuoteBottom
+    div.customerQuoteBottomRight
+    p.type {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    color: #334155;
+}
+
+/* customer starting ending */
+
+/* seller starting */
+
+#sellerSection {
+    background: #ffffff;
+}
+#sellerSection div.sellerDiv {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    padding: 60px 0;
+}
+#sellerSection div.sellerDiv div.sellerContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#sellerSection div.sellerDiv div.sellerContainer:nth-child(even) {
+    flex-direction: row-reverse;
+}
+#sellerSection div.sellerDiv div.sellerContainer div.sellerLeft {
+    display: flex;
+    justify-content: space-between;
+}
+#sellerSection div.sellerDiv div.sellerContainer div.sellerLeft img.seller {
+    width: 400px;
+    height: 425px;
+    opacity: 1;
+}
+#sellerSection div.sellerDiv div.sellerRight {
+}
+#sellerSection div.sellerDiv div.sellerRight h3.title {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    margin-bottom: 8px;
+    color: #000000;
+}
+#sellerSection div.sellerDiv div.sellerRight p.sellerDesc {
+    font-weight: 400;
+    font-size: 16px;
+    leading-trim: NONE;
+    line-height: 160%;
+    letter-spacing: 0%;
+    color: #1d2939;
+    margin-bottom: 18px;
+    max-width: 550px;
+}
+#sellerSection div.sellerDiv div.sellerRight button.sellerJourny {
+    width: fit-content;
+    height: 48px;
+    opacity: 1;
+    gap: 6px;
+    border-radius: 8px;
+    padding: 10px 24px;
+    cursor: pointer;
+    background: #020617;
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 160%;
+    letter-spacing: 0%;
+}
+#sellerSection div.sellerDiv div.sellerRight button.sellerJourny:hover {
+    cursor: pointer;
+}
+#sellerSection div.sellerDiv div.sellerRight button.sellerJourny img {
+    width: 16px;
+    height: 12px;
+    opacity: 1;
+    border-width: 2px;
+}
+
+/* seller ending */
+
+/* product starting  */
+
+#product {
+    background: #f8fafc;
+    height: 441px;
+    padding: 40px 0;
+}
+#product div.wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+#product div.ProductLeft {
+}
+
+#product div.ProductLeft div.ProductPath {
+    height: 24px;
+    margin-bottom: 40px;
+}
+
+#product div.ProductLeft div.ProductPath ul {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+#product div.ProductLeft div.ProductPath ul li {
+}
+
+#product div.ProductLeft div.ProductPath ul li a {
+    display: flex;
+    align-items: center;
+}
+
+#product div.ProductLeft div.ProductPath ul li a span {
+    margin-right: 15px;
+    font-weight: 400;
+    font-size: 14px;
+    leading-trim: NONE;
+    line-height: 150%;
+    letter-spacing: 0%;
+    color: #334155;
+}
+
+#product div.ProductLeft div.ProductPath ul li a img {
+    margin-right: 15px;
+    width: 4px;
+    height: 8px;
+}
+
+#product div.ProductLeft div.ProductDetals {
+}
+
+#product div.ProductLeft div.ProductDetals h3.ProductNamee {
+    font-weight: 700;
+    font-size: 40px;
+
+    line-height: 140%;
+    letter-spacing: -2%;
+    color: #0f172a;
+    margin-bottom: 10px;
+}
+
+#product div.ProductLeft div.ProductDetals p.ProductDesc {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+    letter-spacing: 0%;
+    color: #334155;
+    max-width: 700px;
+    margin-bottom: 15px;
+}
+
+#product div.ProductLeft div.ProductDetals div.ProductRating {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#product div.ProductLeft div.ProductDetals div.ProductRating p.ProductRate {
+    font-weight: 500;
+    font-size: 16px;
+    leading-trim: NONE;
+    line-height: 120%;
+    letter-spacing: 0%;
+    color: #fec84b;
+    align-self: end;
+}
+
+#product
+    div.ProductLeft
+    div.ProductDetals
+    div.ProductRating
+    img.ProductRateImg {
+    width: 15px;
+    height: 15px;
+}
+
+#product
+    div.ProductLeft
+    div.ProductDetals
+    div.ProductRating
+    p.ProductRateCount {
+    font-weight: 400;
+    font-size: 14px;
+    leading-trim: NONE;
+    line-height: 150%;
+    letter-spacing: 0%;
+    color: #334155;
+}
+
+#product div.ProductLeft div.ProductDetals div.ProductSeller {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#product
+    div.ProductLeft
+    div.ProductDetals
+    div.ProductSeller
+    img.ProductSellerImg {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+#product
+    div.ProductLeft
+    div.ProductDetals
+    div.ProductSeller
+    p.ProductSellerName {
+}
+
+#product div.ProductRight {
+}
+
+#product div.ProductRight div.ProductCard {
+    padding: 24px 22px;
+    border-radius: 16px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0px 0px 8px 0px #3b82f61f;
+    height: 588px;
+    position: absolute;
+    right: 5%;
+}
+
+#product div.ProductRight div.ProductCard img.ProductImg {
+    width: 356px;
+    height: 200px;
+    border-radius: 8px;
+}
+
+#product div.ProductRight div.ProductCard div.ProductPriceSection {
+    display: flex;
+    margin-top: 20px;
+    gap: 15px;
+    align-items: center;
+}
+
+#product
+    div.ProductRight
+    div.ProductCard
+    div.ProductPriceSection
+    p.ProductPricee {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    color: #0f172a;
+}
+
+#product
+    div.ProductRight
+    div.ProductCard
+    div.ProductPriceSection
+    h4.ProductOriginalPrice {
+    font-weight: 600;
+    font-size: 18px;
+    leading-trim: NONE;
+    line-height: 160%;
+    letter-spacing: 0%;
+    color: #94a3b8;
+    text-decoration: line-through;
+}
+
+#product
+    div.ProductRight
+    div.ProductCard
+    div.ProductPriceSection
+    h3.ProductOffer {
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    color: #16a34a;
+}
+
+#product div.ProductRight div.ProductCard button.AddtoCartButton {
+    margin-top: 20px;
+    display: block;
+    width: 90%;
+    height: 48px;
+    angle: 0 deg;
+    opacity: 1;
+    border-radius: 8px;
+    gap: 6px;
+    padding: 10px 24px;
+    background: #020617;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 160%;
+    letter-spacing: 0%;
+    margin-bottom: 20px;
+}
+
+#product div.ProductRight div.ProductCard button.BuyNowButtton {
+    width: 90%;
+    height: 48px;
+    angle: 0 deg;
+    opacity: 1;
+    border-radius: 8px;
+    border-width: 1px;
+    gap: 6px;
+    padding-top: 10px;
+    padding-right: 24px;
+    padding-bottom: 10px;
+    padding-left: 24px;
+    background: #ffffff;
+    color: #0f172a;
+    font-family: Inter;
+    font-weight: 500;
+    border: 1px solid #020617;
+    font-size: 14px;
+    line-height: 160%;
+    letter-spacing: 0%;
+    margin-bottom: 20px;
+}
+
+#product div.ProductRight div.ProductCard div.CardBottom {
+    border-top: 1px solid #e2e8f0;
+    padding: 24px;
+}
+
+#product div.ProductRight div.ProductCard div.CardBottom h3.Share {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 160%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #0f172a;
+}
+
+#product div.ProductRight div.ProductCard div.CardBottom div.SocialMedia {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#product
+    div.ProductRight
+    div.ProductCard
+    div.CardBottom
+    div.SocialMedia
+    a.SocialMediaLink {
+    background: #ffffff;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 8px 0px #3b82f61f;
+    border: 1px solid #e2e8f0;
+}
+
+#product
+    div.ProductRight
+    div.ProductCard
+    div.CardBottom
+    div.SocialMedia
+    a.SocialMediaLink
+    img.SocialMediaImg {
+    width: 28px;
+    height: 28px;
+}
+
+/* product ending  */
+
+/* product description starting  */
+
+#ProductDescription {
+    background: #ffffff;
+    padding: 20px 0;
+    width: 70%;
+}
+
+#ProductDescription div.wrapper {
+}
+
+#ProductDescription div.ProductDescriptionTop {
+    padding: 40px 0 40px 0;
+    border-bottom: 1px solid #e2e8f0;
+    width: 100%;
+}
+
+#ProductDescription ul.ProductTopUl {
+    display: flex;
+    gap: 24px;
+}
+
+#ProductDescription li.ProductTopLi {
+    display: flex;
+    width: 148px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    height: 57px;
+    opacity: 1;
+    gap: 8px;
+    text-align: center;
+    margin-right: 24px;
+}
+#ProductDescription li.ProductTopLi:last-child {
+    margin-right: 0;
+}
+
+#ProductDescription a.ButtonDescription {
+    width: 100%;
+    cursor: pointer;
+    padding-top: 18px;
+    padding-right: 21px;
+    padding-bottom: 18px;
+    padding-left: 21px;
+}
+
+#ProductDescription div.ProductDescriptionBottom {
+    padding: 25px 0;
+    width: 100%;
+}
+
+#ProductDescription div.ProductDescriptionArea {
+    border-bottom: 1px solid #e2e8f0;
+    width: 100%;
+    padding: 0 0 25px 0;
+}
+
+#ProductDescription div.ProductDescriptionDiv {
+    margin-bottom: 30px;
+}
+#ProductDescription div.ProductDescriptionDiv:last-child {
+    margin-bottom: 0;
+}
+
+#ProductDescription h3.DescriptinHeading {
+    font-weight: 600;
+    font-size: 20px;
+    leading-trim: NONE;
+    line-height: 150%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #0f172a;
+    margin-bottom: 5px;
+}
+
+#ProductDescription p.ProductDescriptionText {
+    font-weight: 400;
+
+    font-size: 16px;
+    leading-trim: NONE;
+    line-height: 160%;
+    letter-spacing: 0%;
+    color: #334155;
+}
+
+#ProductDescription div.ProductSellerArea {
+    padding: 25px 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+#ProductDescription h3.SellerHeading {
+    margin-bottom: 25px;
+}
+
+#ProductDescription div.SellerType {
+}
+
+#ProductDescription h3.SellerName {
+    font-weight: 600;
+    font-size: 20px;
+    leading-trim: NONE;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #2563eb;
+}
+
+#ProductDescription p.SellerCategory {
+    font-family: Inter;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 16px;
+    leading-trim: NONE;
+    line-height: 160%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #334155;
+}
+
+#ProductDescription div.SellerDetails {
+    display: flex;
+    margin-top: 20px;
+    gap: 20px;
+    align-items: center;
+}
+
+#ProductDescription img.SellerImg {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    angle: 0 deg;
+    opacity: 1;
+}
+
+#ProductDescription div.SellerDetailsRight {
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+#ProductDescription span.SellerDetailSpan {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#ProductDescription img.SImg {
+    width: 24px;
+    height: 24px;
+    angle: 0 deg;
+    opacity: 1;
+}
+
+#ProductDescription span.SText {
+    font-family: Inter;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 14px;
+    leading-trim: NONE;
+    line-height: 150%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #0f172a;
+}
+
+#ProductDescription p.SellerQuote {
+    margin-top: 20px;
+    font-family: Inter;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 16px;
+    leading-trim: NONE;
+    line-height: 160%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #334155;
+}
+
+/* product description ending  */
+
+/* Syllabus starting */
+
+#syllabus {
+    width: 70%;
+    margin-bottom: 25px;
+}
+#syllabus div.wrapper {
+    border-bottom: 1px solid #e2e8f0;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+#syllabus h3.SyllabusHeading {
+    font-weight: 600;
+    font-style: Bold;
+    font-size: 20px;
+    leading-trim: NONE;
+    line-height: 150%;
+    letter-spacing: 0%;
+    color: #0f172a;
+    vertical-align: middle;
+    margin-bottom: 15px;
+}
+#syllabus div.syllabusContainer {
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+#syllabus div.syllabusContainer ul {
+}
+#syllabus div.syllabusContainer ul li {
+    border-bottom: 1px solid #e2e8f0;
+    overflow: hidden;
+}
+#syllabus div.syllabusContainer ul li:hover {
+    border-bottom: 1px solid #8b8d91;
+    scale: 1.01;
+    transition: all 0.4s ease;
+    overflow: hidden;
+}
+#syllabus div.syllabusContainer ul li a {
+}
+#syllabus div.syllabusContainer ul li a div.syllabusTop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 77px;
+    padding: 5%;
+}
+#syllabus div.syllabusContainer ul li a div.syllabusTop div.syllabusTopLeft {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+#syllabus
+    div.syllabusContainer
+    ul
+    li
+    a
+    div.syllabusTop
+    div.syllabusTopLeft
+    img {
+    width: 24px;
+    height: 24px;
+    rotate: 90deg;
+    opacity: 1;
+}
+#syllabus
+    div.syllabusContainer
+    ul
+    li
+    a
+    div.syllabusTop
+    div.syllabusTopLeft
+    h3.syllabusName {
+    font-weight: 600;
+    font-style: Bold;
+    font-size: 18px;
+    leading-trim: NONE;
+    line-height: 160%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #0f172a;
+}
+#syllabus div.syllabusContainer ul li a div.syllabusTop div.syllabusTopRight {
+    display: flex;
+    gap: 16px;
+}
+#syllabus
+    div.syllabusContainer
+    ul
+    li
+    a
+    div.syllabusTop
+    div.syllabusTopRight
+    span.lesson {
+    font-weight: 400;
+    font-size: 14px;
+    leading-trim: NONE;
+    line-height: 150%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #334155;
+}
+#syllabus
+    div.syllabusContainer
+    ul
+    li
+    a
+    div.syllabusTop
+    div.syllabusTopRight
+    span.time {
+    font-weight: 400;
+    font-size: 14px;
+    leading-trim: NONE;
+    line-height: 150%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #334155;
+}
+/* Syllabus ending */
+
+/* review starting  */
+
+#rev {
+    background: #ffffff;
+    width: 100%;
+    padding: 0 0 20px 0;
+}
+
+#rev div.wrapper {
+}
+
+#rev div.ReviewTop {
+    margin-bottom: 10px;
+}
+
+#rev div.ReviewTop h3.ReviewHeading {
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 20px;
+    leading-trim: NONE;
+    line-height: 150%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #0f172a;
+}
+
+#rev div.ReviewBottom {
+    display: flex;
+    justify-content: flex-start;
+}
+
+#rev div.ReviewBottomLeft {
+    width: 33%;
+}
+
+#rev div.ReviewBottomLeft div.RatingTop {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+#rev div.RatingTop img {
+    width: 20px;
+    height: 20px;
+    angle: 0 deg;
+    opacity: 1;
+}
+
+#rev div.RatingTop h3.TotalRating {
+    font-family: Inter;
+    font-weight: 600;
+    font-style: Semi Bold;
+    font-size: 20px;
+    leading-trim: NONE;
+    line-height: 140%;
+    letter-spacing: 0%;
+    color: #0f172a;
+    margin-right: 3px;
+}
+
+#rev div.RatingTop p.TotalReviews {
+    font-family: Inter;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 14px;
+    leading-trim: NONE;
+    line-height: 20px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #334155;
+}
+
+#rev div.ReviewBottomLeft div.RatingBottom {
+    margin-top: 12px;
+}
+
+#rev div.RatingBottom div.RatingSection {
+    display: flex;
+    gap: 2px;
+    margin-bottom: 8px;
+}
+
+#rev div.RatingSection img {
+    width: 20px;
+    height: 20px;
+    angle: 0 deg;
+    opacity: 1;
+}
+
+#rev div.RatingSection p.StartPercentage {
+    margin-left: 5px;
+}
+
+#rev div.ReviewBottomRight {
+    width: 67%;
+}
+
+#rev div.ReviewBottomRight div.ReviewsSection {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+#rev div.ReviewsSection div.ReviewCard {
+    height: 190px;
+    justify-content: flex-start;
+
+    border: 1px solid #e2e8f0;
+    padding: 25px;
+    border-radius: 16px;
+    display: flex;
+    gap: 15%;
+}
+
+#rev div.ReviewCard div.ReviewCardLeft {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    align-self: baseline;
+}
+
+#rev div.ReviewCardLeft img.ReviewerImg {
+    width: 60px;
+    height: 60px;
+    angle: 0 deg;
+    opacity: 1;
+    border-radius: 50%;
+}
+
+#rev div.ReviewCardLeft h3.ReviewerName {
+    font-family: Inter;
+    font-weight: 600;
+    font-style: Semi Bold;
+    font-size: 18px;
+    leading-trim: NONE;
+    line-height: 160%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #0f172a;
+}
+
+#rev div.ReviewCard div.ReviewCardRight {
+}
+
+#rev div.ReviewCardRight div.ReviewCardRightTop {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+#rev div.ReviewCardRightTop img.ReviewerStarImg {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+#rev div.ReviewCardRightTop p.ReviewerRating {
+    font-weight: 600;
+    font-style: Semi Bold;
+    font-size: 18px;
+    leading-trim: NONE;
+    line-height: 160%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #0f172a;
+    margin-right: 30px;
+}
+
+#rev div.ReviewCardRightTop p.ReviewedDate {
+    font-family: Inter;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 14px;
+    leading-trim: NONE;
+    line-height: 150%;
+    letter-spacing: 0%;
+    text-align: right;
+    vertical-align: middle;
+    color: #334155;
+}
+
+#rev div.ReviewCardRight div.ReviewCardRightBottom {
+}
+
+#rev div.ReviewCardRightBottom p.sReviewDescription {
+    font-family: Inter;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 16px;
+    leading-trim: NONE;
+    line-height: 160%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    max-width: 800px;
+    color: #334155;
+}
+
+#rev div.ReviewsSection button.ViewMoreButton {
+    width: 185px;
+    height: 48px;
+    angle: 0 deg;
+    opacity: 1;
+    gap: 6px;
+    border-radius: 8px;
+    border-width: 1px;
+    padding: 10px 24px;
+    border: 1px solid #0f172a;
+    font-family: Inter;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 14px;
+    leading-trim: NONE;
+    line-height: 160%;
+    letter-spacing: 0%;
+    color: #0f172a;
+    background: #ffffff;
+}
+
+/* review ending  */
+/* footer starting */
+
+footer {
+    background: #1e293b;
+    height: auto;
+}
+footer ul {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 80px 0;
+    gap: 20px;
+}
+footer ul li {
+    display: flex;
+    flex-direction: column;
+}
+footer ul li a {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    justify-content: baseline;
+    text-align: center;
+}
+footer ul li a img.logo {
+    display: block;
+}
+footer ul li a h3.logoName {
+    color: #f1f5f9;
+    font-weight: 400;
+    font-size: 26px;
+}
+footer ul li p.description {
+    color: #cbd5e1;
+    max-width: 420px;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 150%;
+    letter-spacing: 0%;
+}
+footer ul li h3.heading {
+    color: #f1f5f9;
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 160%;
+    letter-spacing: 0%;
+}
+footer ul li a.items {
+    color: #cbd5e1;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 160%;
+    letter-spacing: 0%;
+    margin-bottom: 8px;
+}
+footer ul li a.items:last-child {
+    margin-bottom: 0;
+}
+footer ul li div.socialMedia {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 5px;
+    row-gap: 10px;
+    justify-content: space-between;
+}
+footer ul li div.socialMedia a {
+    background: #ffffff;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+footer ul li div.socialMedia a img.mediaImg {
+    width: 30px;
+    height: 30px;
+}
+
+/* footer ending */
+
+/* Responsive Starting */
+@media all and (max-width: 1465px) {
+}
+@media all and (max-width: 1280px) {
+    #spotlight {
+        background-size: 440px;
+        background-position: right 10% center;
+    }
+    #courseDetail {
+        padding: 30px 0;
+        height: auto;
+    }
+    #courseDetails ul {
+        gap: 20px;
+    }
+    #courseDetails ul li {
+        padding-right: 50px;
+    }
+    #topSellerContainer div.topSellerBottom ul {
+        column-gap: 10px;
+    }
+    #topSellerContainer div.topSellerBottom ul li {
+        column-gap: 10px;
+        width: 18%;
+        max-width: 200px;
+    }
+    #TopProductsContainer div.productBottom ul li {
+        padding: 15px 15px;
+    }
+
+    #CustomerFeedbackSection .CustomerBottom ul li {
+        padding: 15px;
+        width: 300px;
+        height: 350px;
+    }
+    #sellerSection div.sellerDiv div.sellerContainer div.sellerLeft img.seller {
+        width: 350px;
+        height: 360px;
+    }
+    #sellerSection div.sellerDiv div.sellerContainer div.sellerLeft img.seller {
+        width: 350px;
+        height: 360px;
+    }
+    footer ul li a.items {
+        font-size: 13px;
+    }
+}
+@media all and (max-width: 1080px) {
+    #spotlight {
+        height: 500px;
+        background-size: 350px;
+    }
+    #courseDetails ul li {
+        padding-right: 20px;
+    }
+    #courseDetails ul li h3 {
+        font-size: 30px;
+    }
+    #TopProductsContainer div.productBottom ul li a div.productImage img {
+        width: 100%;
+        max-width: 100%;
+    }
+    #TopProductsContainer
+        div.productBottom
+        ul
+        li
+        a
+        div.productRating
+        .productImgSection
+        img {
+        width: 15px;
+        height: 15px;
+        gap: 1px;
+    }
+    #TopProductsContainer
+        div.productBottom
+        ul
+        li
+        a
+        div.productRating
+        p.ratingCount {
+        margin-left: 5px;
+    }
+    #CustomerFeedbackSection .CustomerBottom ul li {
+        width: 42vw;
+    }
+    #sellerSection div.sellerDiv div.sellerRight p.sellerDesc {
+        max-width: 470px;
+    }
+}
+@media all and (max-width: 980px) {
+    #spotlight {
+        height: 500px;
+        background-size: 300px;
+    }
+    #spotlight .spotlightContent .spotlightHeading {
+        font-size: 38px;
+    }
+    #spotlight .spotlightContent .spotlightDescription {
+        font-weight: 400;
+        font-size: 16px;
+        max-width: 400px;
+    }
+    #courseDetails ul li {
+        padding-right: 80px;
+    }
+    #courseDetails ul li h3 {
+        font-size: 28px;
+    }
+    #courseDetails ul li p {
+        font-size: 12px;
+    }
+    #TopProductsContainer div.productBottom ul li {
+        max-width: 350px;
+        width: 40%;
+    }
+    #topSellerContainer div.topSellerBottom ul li {
+        width: 32%;
+        max-width: 230px;
+    }
+    #sellerSection div.sellerDiv div.sellerContainer div.sellerLeft img.seller {
+        width: 300px;
+        height: 320px;
+    }
+    #sellerSection div.sellerDiv div.sellerRight p.sellerDesc {
+        max-width: 350px;
+    }
+    footer ul li p.description {
+        max-width: 500px;
+        font-size: 14px;
+    }
+    footer ul li div.socialMedia a {
+        width: 35px;
+        height: 35px;
+    }
+    footer ul li div.socialMedia a img.mediaImg {
+        width: 25px;
+        height: 25px;
+    }
+}
+@media all and (max-width: 768px) {
+    #spotlight {
+        height: 450px;
+        background-size: 260px;
+    }
+    #spotlight .spotlightContent .spotlightHeading {
+        font-size: 34px;
+        max-width: 400px;
+    }
+    #spotlight .spotlightContent .spotlightDescription {
+        font-weight: 400;
+        font-size: 16px;
+        max-width: 370px;
+    }
+    #courseDetails ul li {
+        padding-right: 45px;
+    }
+    #sellerSection div.sellerDiv div.sellerContainer div.sellerLeft {
+        width: 45%;
+    }
+    #sellerSection div.sellerDiv div.sellerContainer div.sellerLeft img.seller {
+        width: 250px;
+        height: 280px;
+    }
+    #sellerSection div.sellerDiv div.sellerRight h3.title {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 150%;
+        letter-spacing: 0%;
+        margin-bottom: 8px;
+        color: #000000;
+        max-width: 300px;
+    }
+    footer ul {
+        gap: 30px;
+    }
+    footer ul li:first-child {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+    }
+    footer ul li div.socialMedia a {
+        width: 40px;
+        height: 40px;
+    }
+    footer ul li div.socialMedia a img.mediaImg {
+        width: 30px;
+        height: 30px;
+    }
+}
+@media all and (max-width: 680px) {
+    #spotlight {
+        height: 400px;
+        background-size: 230px;
+    }
+    #spotlight .spotlightContent .spotlightHeading {
+        font-size: 32px;
+        max-width: 350px;
+    }
+    #spotlight .spotlightContent .spotlightDescription {
+        font-weight: 400;
+        font-size: 16px;
+        max-width: 300px;
+    }
+    #courseDetails ul {
+        flex-wrap: wrap;
+    }
+    #courseDetails ul li {
+        border: 0;
+    }
+    #courseDetails ul li:nth-child(even) {
+        border: 0;
+        padding-right: 0;
+    }
+    #courseCategories .categorieBottom ul li {
+        width: 40%;
+    }
+    #TopProductsContainer div.productBottom ul li {
+        max-width: 400px;
+        width: 44%;
+    }
+    #TopProductsContainer div.productBottom ul li a div.productImage img {
+        width: 100%;
+        max-width: 100%;
+        height: 130px;
+    }
+    #TopProductsContainer div.productBottom ul li a h3.productName {
+        font-size: 16px;
+    }
+    #topSellerContainer div.topSellerBottom ul li {
+        width: 40%;
+        max-width: 230px;
+    }
+    #CustomerFeedbackSection .CustomerBottom ul li {
+        width: 380px;
+    }
+    #sellerSection div.sellerDiv div.sellerContainer {
+        flex-wrap: wrap;
+        row-gap: 30px;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+    #sellerSection div.sellerDiv div.sellerContainer div.sellerLeft {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    #sellerSection div.sellerDiv div.sellerRight {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    #sellerSection div.sellerDiv div.sellerContainer div.sellerLeft img.seller {
+        width: 300px;
+        height: 300px;
+    }
+    #sellerSection div.sellerDiv div.sellerRight p.sellerDesc {
+        max-width: 439px;
+    }
+    #CustomerFeedbackSection .CustomerBottom ul {
+        align-items: center;
+        justify-content: center;
+    }
+    #sellerSection div.sellerDiv div.sellerRight {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    footer ul li {
+        display: flex;
+        flex-direction: column;
+        width: 25%;
+    }
+    footer ul li div.socialMedia a {
+        width: 35px;
+        height: 35px;
+    }
+    footer ul li div.socialMedia a img.mediaImg {
+        width: 25px;
+        height: 25px;
+    }
+}
+@media all and (max-width: 548px) {
+    nav .navRightMobileContainer {
+        display: block;
+        transition: transform 0.5s ease-in-out;
+    }
+    nav .navRight {
+        display: none;
+    }
+    nav .navRightMobileContainer .MobileMenuItems {
+        /* transform: translateX(0);
+        transition: transform 0.5s ease-in-out; */
+    }
+    #spotlight {
+        height: 400px;
+        background: none;
+        text-align: center;
+    }
+    #spotlight .spotlightContent .spotlightHeading {
+        font-size: 36px;
+        max-width: 350px;
+    }
+    #spotlight .spotlightContent .spotlightDescription {
+        font-weight: 400;
+        font-size: 16px;
+        max-width: 450px;
+    }
+    #spotlight .spotlightContent {
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+    #CustomerFeedbackSection .CustomerBottom ul li {
+        width: 90vw;
+    }
+    footer ul {
+        justify-content: center;
+        text-align: center;
+    }
+    footer ul li {
+        width: 80%;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+    footer ul li p.description {
+        max-width: 100%;
+    }
+}
+@media all and (max-width: 480px) {
+    #courseDetails ul li {
+        padding: 0;
+        width: 40%;
+    }
+    #courseCategories .categorieBottom ul li {
+        width: 48%;
+    }
+    #TopProductsContainer div.productBottom ul {
+        justify-content: center;
+    }
+    #TopProductsContainer div.productBottom ul li {
+        align-items: center;
+        text-align: center;
+        width: 80%;
+    }
+    #topSellerContainer div.topSellerBottom ul {
+        justify-content: center;
+    }
+    #topSellerContainer div.topSellerBottom ul li {
+        width: 80%;
+        max-width: 240px;
+    }
+    #CustomerFeedbackSection .CustomerBottom ul li {
+        height: auto;
+    }
+}
+@media all and (max-width: 420px) {
+    #spotlight .spotlightContent .spotlightHeading {
+        font-size: 32px;
+        max-width: 350px;
+    }
+}
+@media all and (max-width: 380px) {
+    #sellerSection div.sellerDiv div.sellerContainer div.sellerLeft img.seller {
+        width: 260px;
+        height: 260px;
+    }
+}
+@media all and (max-width: 360px) {
+    #spotlight .spotlightContent .spotlightHeading {
+        font-size: 1.5rem;
+        max-width: 350px;
+    }
+    #spotlight .spotlightContent .spotlightDescription {
+        font-weight: 400;
+        font-size: 14px;
+        max-width: 450px;
+    }
+    #courseDetails ul {
+        text-align: center;
+        row-gap: 30px;
+    }
+    #courseDetails ul li {
+        padding: 0;
+
+        width: 100%;
+    }
+    #courseCategories .categorieBottom ul {
+        justify-content: center;
+    }
+    #courseCategories .categorieBottom ul li {
+        width: 80%;
+    }
+}
+@media all and (max-width: 320px) {
+}

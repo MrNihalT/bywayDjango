@@ -1,0 +1,404 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+
+{% include 'includes/header.html' %} 
+
+
+<!-- Course page starting  -->
+<section id="product">
+    <div class="wrapper">
+        <div class="ProductLeft">
+            <div class="ProductPath">
+                <ul>
+                    <li>
+                        <a
+                            class=""
+                            href="{% url 'web:index' %}"
+                            data-discover="true"
+                            ><span>Home</span
+                            ><img class="" src="{% static 'icons/Vector.svg' %}"
+                        /></a>
+                    </li>
+                    <li class="">
+                        <a class="" href="#/" data-discover="true"
+                            ><span class="">Products</span
+                            ><img class="" src="{% static 'icons/Vector.svg' %}"
+                        /></a>
+                    </li>
+                    <li class="">
+                        <a
+                            class=""
+                            href="#/product/2"
+                            data-discover="true"
+                            ><span class=""></span
+                        ></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="ProductDetals">
+                <h3 class="ProductNamee">
+                    {{course.title}}
+                </h3>
+                <p class="ProductDesc">
+                   
+                    {{course.description|truncatewords:75}}
+                </p>
+                <div class="ProductRating">
+                    <p class="ProductRate">{{course.average_rating|floatformat:1}}</p>
+                    <img class="ProductRateImg" src="{% static 'icons/star.svg' %}" />
+                    <img class="ProductRateImg" src="{% static 'icons/star.svg' %}" />
+                    <img class="ProductRateImg" src="{% static 'icons/star.svg' %}" />
+                    <img class="ProductRateImg" src="{% static 'icons/star.svg' %}" />
+                    <img class="ProductRateImg" src="{% static 'icons/star.svg' %}" />
+                    <p class="ProductRateCount">({{cource.total_reviews}} ratings)</p>
+                </div>
+                <div class="ProductSeller">
+                    <img
+                        class="ProductSellerImg"
+                        src="{{course.instructor.profile.profile_picture.url}}"
+                    />
+                    <p class="ProductSellerName">{{ course.instructor.get_full_name|default:course.instructor.username }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="ProductRight">
+            <div class="ProductCard">
+                <img class="ProductImg" src="{{course.course_image.url}}" />
+                <div class="ProductPriceSection">
+                    <p class="ProductPricee">${{course.final_price}}</p>
+                    <h4 class="ProductOriginalPrice">${{course.price}}</h4>
+                    <h3 class="ProductOffer">{{course.offer_percentage}}% Off</h3>
+                </div>
+                <button class="AddtoCartButton">Add To Cart</button
+                >
+                <form mehtod="POST" action="{% url 'courses:buy_course' course.id %}>
+                    {% csrf_token %}
+                    <button class="BuyNowButtton">Buy Now</button>
+                </form>
+                <div class="CardBottom">
+                    <h3 class="Share">Share</h3>
+                    <div class="SocialMedia">
+                        <a
+                            href="#"
+                            aria-label="Facebook"
+                            class="SocialMediaLink"
+                            ><img
+                                class="SocialMediaImg"
+                                src="{% static 'images/facebook.png' %}"
+                        /></a>
+                        <a
+                            href="#"
+                            aria-label="GitHub"
+                            class="SocialMediaLink"
+                            ><img
+                                class="SocialMediaImg"
+                                src="{% static 'images/github.png' %}"
+                        /></a>
+                        <a
+                            href="#"
+                            aria-label="Google"
+                            class="SocialMediaLink"
+                            ><img
+                                class="SocialMediaImg"
+                                src="{% static 'images/google.png' %}"
+                        /></a>
+                        <a
+                            href="#"
+                            aria-label="Twitter"
+                            class="SocialMediaLink"
+                            ><img
+                                class="SocialMediaImg"
+                                src="{% static 'images/twitter.png' %}"
+                        /></a>
+                        <a
+                            href="#"
+                            aria-label="Microsoft"
+                            class="SocialMediaLink"
+                            ><img
+                                class="SocialMediaImg"
+                                src="{% static 'images/microsoft.png' %}"
+                        /></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Course page ending  -->
+<!-- Course description starting -->
+<section id="ProductDescription">
+    <div class="wrapper">
+        <div class="ProductDescriptionTop">
+            <ul class="ProductTopUl">
+                <li class="ProductTopLi">
+                    <a href="#desc"  class="ButtonDescription">Description</a>
+                </li>
+                <li class="ProductTopLi">
+                    <a href="#sell" class="ButtonDescription">Seller</a>
+                </li>
+                <li class="ProductTopLi">
+                    <a href="#rev" class="ButtonDescription">Reviews</a>
+                </li>
+            </ul>
+        </div>
+        <div class="ProductDescriptionBottom">
+            <div class="ProductDescriptionArea">
+                <div class="ProductDescriptionDiv">
+                    <h3 class="DescriptinHeading">
+                        Product Description
+                    </h3>
+                    <p id="desc" class="ProductDescriptionText">{{course.description}}</p>
+                </div>
+                <div  class="ProductDescriptionDiv">
+                    <h3 class="DescriptinHeading">
+                        Product Verification
+                    </h3>
+                    <p class="ProductDescriptionText">
+                        At Byway, we understand the significance of
+                        formal recognition for your hard work and
+                        dedication to continuous learning. Upon
+                        successful completion of our courses, you will
+                        earn a prestigious certification that not only
+                        validates your expertise but also opens doors to
+                        new opportunities in your chosen field.
+                    </p>
+                </div>
+            </div>
+            <div id="sell" class="ProductSellerArea">
+                <h3 class="SellerHeading">Seller</h3>
+                <div class="SellerType">
+                    <h3 class="SellerName">{{course.instructor}}</h3>
+                    <p class="SellerCategory">{{course.category}}</p>
+                </div>
+                <div class="SellerDetails">
+                    <img class="SellerImg" src="{{course.instructor.profile.profile_picture.url}}" />
+                    <div class="SellerDetailsRight">
+                        <span class="SellerDetailSpan">
+                            <img class="SImg" src="{% static 'icons/badge.svg' %}" />
+                            <span class="SText">{{ course.instructor.profile.total_reviews}} Reviews</span>
+                        </span>
+                        <span class="SellerDetailSpan">
+                            <img class="SImg" src="{% static 'icons/badge.svg' %}" />
+                            <span class="SText">{{ course.instructor.profile.total_students }} customers</span>
+                        </span>
+                        <span class="SellerDetailSpan">
+                            <img class="SImg" src="{% static 'icons/play.svg' %}" />
+                            <span class="SText">{{ course.instructor.profile.total_courses }} courses</span>
+                        </span>
+                    </div>
+                </div>
+                <p class="SellerQuote">
+                    {{course.instructor.profile.bio}}
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Course description ending -->
+<!-- Sylebess starting -->
+<!-- Sylebess starting -->
+<section id="syllabus">
+    <div class="wrapper">
+        <h3 class="SyllabusHeading">Syllabus</h3>
+        <div class="syllabusContainer">
+            <ul>
+                {% for section in course.sections.all %}
+                <li>
+                    <a href="">
+                        <div class="syllabusTop">
+                            <div class="syllabusTopLeft">
+                                <img src="{% static 'icons/Vector.svg' %}" alt="" />
+                                <h3 class="syllabusName">
+                                    {{ section.title }}
+                                </h3>
+                            </div>
+                            <div class="syllabusTopRight">
+                                <span class="lesson">{{section.lectures.count}} Lessons</span>
+                                <span class="time">{{section.hour}} hour</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- Sylebess ending -->
+<!-- Review Starting -->
+<section id="rev">
+    <div class="wrapper">
+        <div class="ReviewTop">
+            <h3 class="ReviewHeading">Learner Reviews</h3>
+        </div>
+        <div class="ReviewBottom">
+            <div class="ReviewBottomLeft">
+                <div class="RatingTop">
+                    <img class="" src="{% static 'icons/star.svg' %}" />
+                    <h3 class="TotalRating">{{avg_rating|floatformat:1}}</h3>
+                    <p class="TotalReviews">{{ review_count }} reviews</p>
+                </div>
+                <div class="RatingBottom">
+                    {% for item in rating_breakdown %}
+                    <div class="RatingSection">
+                        {% for i in "12345" %}
+                            {% if i|add:0 <= item.star %}
+                                <img src="{% static 'icons/star.svg' %}" />
+                            {% else %}
+                                <img src="{% static 'icons/white star.svg' %}" />
+                            {% endif %}
+                        {% endfor %}
+                        
+                        <p class="StartPercentage">{{ item.percentage|floatformat:0 }}%</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="ReviewBottomRight">
+                <div class="ReviewsSection">
+                    {% for review in course.reviews.all %}
+                        <div class="ReviewCard">
+                            <div class="ReviewCardLeft">
+                                <img
+                                    class="ReviewerImg"
+                                    src="{{ review.student.profile.profile_picture.url }}"
+                                />
+                                <h3 class="ReviewerName">{{review.student.username}}</h3>
+                            </div>
+                            <div class="ReviewCardRight">
+                                <div class="ReviewCardRightTop">
+                                    <img
+                                        class="ReviewerStarImg"
+                                        src="{% static 'icons/star.svg' %}"
+                                    />
+                                    <p class="ReviewerRating">{{ review.rating }}</p>
+                                    <p class="ReviewedDate">
+                                       Reviewed on {{ review.created_at|date:"jS F, Y" }}
+                                    </p>
+                                </div>
+                                <div class="ReviewCardRightBottom">
+                                    <p class="sReviewDescription">
+                                       {{ review.comment }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    <button class="ViewMoreButton">
+                        View more Reviews
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Review Ending -->
+<!-- custemor section starting -->
+<section id="CustomerFeedbackSection">
+    <div class="wrapper">
+        <div class="CustomerTop">
+            <ul>
+                <li><h3>What Our Customer Say About Us</h3></li>
+                <li>
+                    <div class="buttonGruop">
+                        <button class="Left">
+                            <img src="{% static 'icons/left.svg' %}" alt="" />
+                        </button>
+                        <button class="Right">
+                            <img src="{% static 'icons/right.svg' %}" alt="" />
+                        </button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="CustomerBottom">
+            <ul>
+                {% for review in platform_reviews %}
+                    <li>
+                        <img
+                            src="{% static 'icons/double_quots.svg' %}"
+                            alt=""
+                            class="quote"
+                        />
+                        <p class="customerQuote">
+                            "{{ review.review_text }}"
+                        </p>
+                        <div class="customerQuoteBottom">
+                            <img
+                                src="{{ review.student.profile.profile_picture.url }}"
+                                alt=""
+                                class="customer"
+                            />
+                            <div class="customerQuoteBottomRight">
+                                <h3 class="reviwername">{{ review.student.username }}</h3>
+                                <p class="type">{{ review.student.profile.title|default:"Learner" }}</p>
+                            </div>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- custemor section ending -->
+<!-- More Courses Like This starting -->
+<section id="TopProductsContainer">
+    <div class="wrapper">
+        <div class="categorieTop">
+            <h3>More Courses Like This</h3>
+            <a href="" class="seeAll">See All</a>
+        </div>
+        <div class="productBottom">
+            <ul>
+                {% for rlcourse in related_courses  %}
+                <li>
+                    <a href="{% url 'web:courcesingle' rlcourse.id %}">
+                        <div class="productImage">
+                            <img
+                                src="{% static 'images/Rectangle 1080.png' %}"
+                                alt=""
+                            />
+                        </div>
+                        <h3 class="productName">
+                            {{ rlcourse.title }}
+                        </h3>
+                        <p class="productCategory">
+                            By {{rlcourse.instructor}}
+                        </p>
+                        <div class="productRating">
+                            <div class="productImgSection">
+                                {% with rating=related.average_rating|floatformat:0 %}
+            
+                                    {% for i in "12345" %}
+                                        
+                                        {% if forloop.counter <= rating %}
+                                            <img src="{% static 'icons/star.svg' %}" alt="star" />
+                                        {% else %}
+                                            <img src="{% static 'icons/white star.svg' %}" alt="empty star" />
+                                        {% endif %}
+                                        
+                                    {% endfor %}
+                                {% endwith %}
+                                
+
+                            </div>
+                           <p class="ratingCount">({{ rlcourse.total_reviews }} ratings)</p>
+                        </div>
+                        <div class="producttime">
+                             <span>{{ rlcourse.total_time }}</span>
+                            <span>{{ rlcourse.total_lecture }} Lecture</span>
+                            <span>{{ rlcourse.difficulty }}</span>
+                        </div>
+                        <h3 class="productPrice">${{ rlcourse.final_price }}</h3>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- More Courses Like This ending -->
+{% include 'includes/footer.html' %}
+{% endblock %}

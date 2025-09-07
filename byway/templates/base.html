@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <meta charset="UTF-8" />
+        <title>byway</title>
+        <link
+            rel="stylesheet"
+            href="{% static 'css/style.css' %}"
+            type="text/css"
+        />
+        <link
+            rel="icon"
+            type="image/png' %}"
+            sizes="32x32"
+            href="{% static 'assets/icons/logo.svg' %}"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta property="og:image" content="" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+
+    </head>
+    <body>
+        {% block content %} {% endblock %}
+        <script src="{% static 'js/script.js' %}"></script>
+    </body>
+</html>

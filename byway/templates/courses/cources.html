@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+{% include 'includes/header.html' %} 
+<!-- top products starting -->
+<section id="TopProductsContainer">
+    <div class="wrapper">
+        
+        <div class="productBottom">
+            <ul>
+                {% for cource in cources%}
+                <li>
+                    <a href="{% url 'web:courcesingle' cource.id %}">
+                        <div class="productImage">
+                            <img
+                                src="{{cource.course_image.url}}"
+                                alt=""
+                            />
+                        </div>
+                        <h3 class="productName">
+                            {{cource.title}}
+                        </h3>
+                        <p class="productCategory">
+                            {{cource.instructor}}
+                        </p>
+                        <div class="productRating">
+                            <div class="productImgSection">
+                                <img src="{% static 'icons/star.svg' %}" alt="" />
+                                <img src="{% static 'icons/star.svg' %}" alt="" />
+                                <img src="{% static 'icons/star.svg' %}" alt="" />
+                                <img src="{% static 'icons/star.svg' %}" alt="" />
+                                <img src="{% static 'icons/star.svg' %}" alt="" />
+                            </div>
+                            <p class="ratingCount">(1200 ratings)</p>
+                        </div>
+                        <div class="producttime">
+                            <span>{{cource.total_time}}</span>
+                            <span>{{cource.total_lecture}} lecture</span>
+                            <span>Beginner</span>
+                        </div>
+                        <h3 class="productPrice">${{cource.price}}</h3>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- top products ending -->
+
+{% include 'includes/footer.html' %}
+{% endblock %}

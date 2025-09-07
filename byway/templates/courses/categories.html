@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static  %}
+{% block content %}
+{% include 'includes/header.html' %}
+<!-- course categories starting -->
+<section id="courseCategories">
+    <div class="wrapper">
+        <div class="categorieTop">
+            
+        </div>
+        <div class="categorieBottom">
+            <ul>
+                {% for category in categories %}
+                <li>
+                    <div class="ImageDiv">
+                        <img src="{{category.caategory_img.url}}" alt="" />
+                    </div>
+                    <h3>{{category.name}}</h3>
+                    <p>{{category.course_count}}</p>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- course categories ending -->
+{% include 'includes/footer.html' %}
+{% endblock %}

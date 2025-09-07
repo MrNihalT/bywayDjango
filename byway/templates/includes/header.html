@@ -1,0 +1,58 @@
+{% load static %}
+<header>
+    <div class="wrapper">
+        <nav>
+            <div class="navleft">
+                <a href="{% url 'web:index' %}">
+                    <h3 class="Logoh3">
+                        <img src="{% static 'icons/logo.svg' %}" alt="Byway" />
+                    </h3>
+                    <h3 class="logoName">Byway</h3>
+                </a>
+            </div>
+            <div class="navRight">
+                
+                {% if request.user.is_authenticated %}
+                    <a class="icons" href="">
+                        <img src="{% static 'icons/favorate.svg' %}" alt="" />
+                    </a>
+                    <a class="icons" href="">
+                        <img src="{% static 'icons/cart.svg' %}" alt="" />
+                    </a>
+                    <a class="icons" href="">
+                        <img src="{% static 'icons/bell.svg' %}" alt="" />
+                    </a>
+                    <a class="username" href="">
+                        <h3>{{request.user.username|slice:":1"}}</h3>
+                    </a>
+                    <a href="{% url 'users:logout' %}" class="logoutBtn">Log Out</a>
+                {% else %}
+                    <a href="{% url 'users:login' %}" class="loginBtn">Log in </a>
+                    <a href="{% url 'users:signup' %}" class="signupBtn">Sign Up</a>
+                {% endif %}
+            </div>
+            <div class="navRightMobileContainer">
+                <button class="ButtonMenu" id="menuToggle">
+                    <img src="{% static 'icons/menu.png' %}" alt="" />
+                </button>
+                <div class="MobileMenuItems" id="mobileMenu">
+                    <a class="icons" href="">
+                        <img src="{% static 'icons/favorate.svg' %}" alt="" />
+                    </a>
+                    <a class="icons" href="">
+                        <img src="{% static 'icons/cart.svg' %}" alt="" />
+                    </a>
+                    <a class="icons" href="">
+                        <img src="{% static 'icons/bell.svg' %}" alt="" />
+                    </a>
+                    <a class="username" href="">
+                        <h3>J</h3>
+                    </a>
+                    <a href="" class="logoutBtn">Log Out</a>
+                    <a href="" class="loginBtn">Log in </a>
+                    <a href="" class="signupBtn">Sign Up</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
