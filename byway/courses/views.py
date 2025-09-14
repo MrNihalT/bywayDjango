@@ -57,6 +57,34 @@ def create_course(request):
     }
     return render(request, "courses/creat.html", context)
 
+@login_required()
+def edit_courses(request,id):
+    if not request.user.profile.is_instructor:
+        messages.error(request, "You are not authorized to Edit a course.")
+        return HttpResponseRedirect(reverse("web:index"))
+    
+    instance = get_object_or_404(Course,id=yuid)
+    if instance.instructor != request.user:
+        messages.error(request,"you can only edit your own courses")
+        return HttpResponseRedirect(reverse("courses:my_courses"))
+    
+    if request.method == "POST":
+        form = CourseForm(request.POST,request.FILES,instance = instance)
+        if form.is_valid():
+            form.save()
+            messages.success(request,"course updated")
+            return HttpResponseRedirect(reverse("courses:my_courses"))
+    else:
+        form = CourseForm(instance=instance)
+        
+    context = {
+        "title":f'Edit Courses : {instance.title}',
+        'form':form,
+    }
+    return render(request,"courses/creat.html",context=context)
+
+
+
 
 @login_required()
 def my_courses(request):
@@ -70,7 +98,7 @@ def my_courses(request):
         "title":"My Courses",
         "cources":cources
     }
-    return render(request,'courses/cources.html',context=context)
+    return render(request,'courses/instructor_courses.html',context=context)
 
 
 

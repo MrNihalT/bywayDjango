@@ -33,7 +33,7 @@ class Course(models.Model):
     course_image = models.ImageField(upload_to="course_images/")
     total_time = models.CharField(max_length=20)
     total_lecture = models.IntegerField()
-    created_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(auto_now_add=True,editable=False)
     updated_at = models.DateTimeField(auto_now=True)
     is_deleted = models.BooleanField(default=False)
     is_draft = models.BooleanField(default=False)
