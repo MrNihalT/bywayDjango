@@ -1,0 +1,71 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+{% include 'includes/header.html' %}
+<section id="edit-post-home">
+    <div class="wrapper">
+            <h3 class="title">{{ title }}</h3>
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                {# RENDER THE MAIN COURSE FORM #}
+                <div class="form-field">
+                    <label for="{{ form.title.id_for_label }}">{{ form.title.label }}</label>
+                    {{ form.title }}
+                </div>
+                <div class="form-field">
+                    <label for="{{ form.description.id_for_label }}">{{ form.description.label }}</label>
+                    {{ form.description }}
+                </div>
+                <div class="form-field">
+                    <label for="{{ form.total_time.id_for_label }}">{{ form.total_time.label }}</label>
+                    {{ form.total_time }}
+                </div>
+                <div class="form-field">
+                    <label for="{{ form.total_lecture.id_for_label }}">{{ form.total_lecture.label }}</label>
+                    {{ form.total_lecture }}
+                </div>
+                <div class="form-field">
+                    <label class="subheads" for="{{ form.category.id_for_label }}">{{ form.category.label }}</label>
+                    {{ form.category }}
+                    <button class="add-cat" type="button" id="add-category-btn" style="margin-top: 5px;">Or, Create a New Category</button>
+                </div>
+                <div class="form-field">
+                    <label class="subheads" for="{{ form.difficulty.id_for_label }}">{{ form.difficulty.label }}</label>
+                    {{ form.difficulty }}
+                    
+                </div>
+                <div class="form-field" id="new-category-field" style="display: none;">
+                    <label for="{{ form.new_category.id_for_label }}">{{ form.new_category.label }}</label>
+                    {{ form.new_category }}
+        
+                </div>
+                 <div class="form-field">
+                    <label for="{{ form.price.id_for_label }}">{{ form.price.label }}</label>
+                    {{ form.price }}
+                </div>
+                 <div class="form-field">
+                    <label for="{{ form.offer_percentage.id_for_label }}">{{ form.offer_percentage.label }}</label>
+                    {{ form.offer_percentage }}
+                </div>
+                 <div class="form-field">
+                    <label for="{{ form.course_image.id_for_label }}">{{ form.course_image.label }}</label>
+                    {{ form.course_image }}
+                </div>
+                {# ... Render other fields from your CourseForm here as needed ... #}
+                <div class="form-field">
+                    <label class="checkbox">
+                        {{ form.is_draft }}
+                        {{ form.is_draft.label }}
+                    </label>
+                </div>
+                <hr>
+                <div class="form-field">
+                    <input type="submit" value="Submit Course" />
+                </div>
+            </form>
+        </div>
+</section>
+{% include 'includes/footer.html' %}
+{% endblock %}

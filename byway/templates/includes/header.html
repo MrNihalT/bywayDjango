@@ -13,6 +13,10 @@
             <div class="navRight">
                 
                 {% if request.user.is_authenticated %}
+                    {% if request.user.profile.is_instructor %}
+                        <a class="loginBtn" href="{% url 'courses:create_course' %}">Create Post</a>
+                        <a class="loginBtn" href="{% url 'courses:my_courses' %}">My Post</a>
+                    {% endif %} 
                     <a class="icons" href="">
                         <img src="{% static 'icons/favorate.svg' %}" alt="" />
                     </a>

@@ -1759,7 +1759,44 @@ footer ul li div.socialMedia a img.mediaImg {
     height: 30px;
 }
 
+#edit-post-home{
+    background-color: #ffffff ;
+    padding: 30px 0;
+}
+#edit-post-home .title{
+    font-size: 24px;
+    font-weight: 500;
+}
+#edit-post-home form{
+    background-color: #f8fafc; 
+    border-radius: 8px;
+}
+#edit-post-home form div.form-field{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+#edit-post-home form div.form-field input,textarea,select{
+    border: 1px solid #16a34a;
+    min-height: 40px;
+    border-radius: 8px;
+    
+}
+#edit-post-home form div.form-field .add-cat{
+    max-width: 200px; 
+    background-color: #16a34a;
+    color: #ffffff;
+    height: 40px;
+    border-radius: 8px; 
+
+    align-self: center;
+    padding: 10px 12px;
+}
 /* footer ending */
+
+
 
 /* Responsive Starting */
 @media all and (max-width: 1465px) {

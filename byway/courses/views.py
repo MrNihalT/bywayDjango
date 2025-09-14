@@ -1,8 +1,11 @@
-from django.shortcuts import render , get_object_or_404 , reverse
+import datetime
+from django.shortcuts import render, get_object_or_404, reverse
 from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from courses.models import Course , Enrollment
+from courses.models import Course, Enrollment, Section
+# Import the form and the new formset
+from courses.forms import CourseForm
 
 
 @login_required
@@ -29,3 +32,46 @@ def my_courses_view(request):
         'enrollments':enrollments,
     }
     return render(request,'courses/my_courses.html',context)
+
+
+@login_required()
+def create_course(request):
+    if not request.user.profile.is_instructor:
+        messages.error(request, "You are not authorized to create a course.")
+        return HttpResponseRedirect(reverse("web:index"))
+
+    if request.method == "POST":
+        form = CourseForm(request.POST, request.FILES)
+        if form.is_valid():
+            course = form.save(commit=False)
+            course.instructor = request.user
+            course.save()
+            messages.success(request, "Course created successfully!")
+            return HttpResponseRedirect(reverse("web:index"))
+    else:
+        form = CourseForm()
+        
+    context = {
+        "title": "Create New Course",
+        "form": form,
+    }
+    return render(request, "courses/creat.html", context)
+
+
+@login_required()
+def my_courses(request):
+    if not request.user.profile.is_instructor:
+       messages.error(request,"You are not authorized to view this page")
+       return HttpResponseRedirect(reverse("web:index"))
+
+
+    cources = Course.objects.filter(instructor=request.user)
+    context = {
+        "title":"My Courses",
+        "cources":cources
+    }
+    return render(request,'courses/cources.html',context=context)
+
+
+
+

@@ -43,3 +43,11 @@ const scrollContainer = document.getElementById('review-list');
          })
     }
 })
+
+
+document.getElementById('add-category-btn').addEventListener('click', function() {
+    // Show the hidden text field
+    document.getElementById('new-category-field').style.display = 'block';
+    // Hide this button
+    this.style.display = 'none';
+});
